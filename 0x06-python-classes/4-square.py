@@ -4,10 +4,15 @@
 
 class Square:
     def __init__(self, size=0):
+        """ initialize a square
+
+        Args:
+            size (int): size of square"""
         self.size = size
 
     @property
     def size(self):
+        """get ans set"""
         return (self.__size)
 
     @size.setter
@@ -19,4 +24,5 @@ class Square:
         self.__size = value
 
     def area(self):
+        """area compytation"""
         return (self.__size * self.__size)
