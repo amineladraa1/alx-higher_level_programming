@@ -1,0 +1,77 @@
+=====================
+the add_integer.py
+=====================
+
+Using
+=====
+``add_integer(...)`` returns addition like ``+``
+
+Examples
+========
+
+>>> add_integer(1, 2)
+3
+
+
+>>> add_integer(2, -5)
+-3
+
+>>> add_integer(1.1, 2.9)
+3
+
+>>> add_integer(1.0, 4.2)
+5
+
+>>> add_integer(-1.1, -2.9)
+-3
+
+>>> add_integer(3.5, -5)
+-2
+
+The second argument is optional - by default, it is 98.
+
+>>> add_integer(1)
+99
+
+Non-Numbers
+===========
+
+add_integer() expects both arguments either int or floats.
+If either argument is a non-integer and non-float, a TypeError is raised:
+
+>>> add_integer("hi", 6)
+# Expected Output: TypeError: a must be an integer
+
+>>> add_integer(4, "traaa")
+# Expected Output: TypeError: b must be an integer
+
+>>> add_integer(None)
+# Expected Output: TypeError: a must be an integer
+
+>>> add_integer(5.6, None)
+# Expected Output: TypeError: b must be an integer
+
+If both arguments non-integers and non-floats, TypeError is printed for
+the first argument.
+
+>>> add_integer("hi", "bruh")
+# Expected Output: TypeError: a must be an integer
+
+Infinity and NaN
+================
+
+The function will fail if infinity is provided.
+
+>>> add_integer(float('inf'))
+# Expected Output: OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(3, float('inf'))
+# Expected Output: OverflowError: cannot convert float infinity to integer
+
+And NaN numbers.
+
+>>> add_integer(float('nan'))
+# Expected Output: ValueError: cannot convert float NaN to integer
+
+>>> add_integer(3, float('nan'))
+# Expected Output: ValueError: cannot convert float NaN to integer
