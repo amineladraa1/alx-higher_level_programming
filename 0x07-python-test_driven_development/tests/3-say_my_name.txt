@@ -1,0 +1,58 @@
+module defines a function ``say_my_name(first_name, last_name="")``.
+
+
+``say_my_name(...)`` fun will print "My name is <first_name> <last_name>".
+
+Import the func and check normal use:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Amine", "Ladraa")
+    My name is Amine Ladraa
+
+Check normal use again:
+
+    >>> say_my_name("Hell", "Blade")
+    My name is Hell Blade
+
+note ```last_name``` is optional.
+
+Check empty last name:
+
+    >>> say_my_name("Brennan")
+    My name is Brennan 
+
+
+``first_name`` and ``last_name``` have to be strings.
+
+Check for a num first name:
+
+    >>> say_my_name(1, "God")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Check if last name is a list:
+
+    >>> say_my_name("Have", ["guts", "boy"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+check for different inputs:
+
+    >>> say_my_name({"Have": 2, "men": 3}, 9.32)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Check if arg is None:
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+one name must be provided atleast.
+
+Check if there is no args:
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
