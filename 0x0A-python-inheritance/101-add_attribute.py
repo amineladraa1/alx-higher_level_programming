@@ -2,7 +2,7 @@
 """define a func to add attribute"""
 
 
-def add_attr(obj, attr, value):
+def add_attribute(obj, attr, value):
     """check if it has dict before setting new attr
  
     Args:
