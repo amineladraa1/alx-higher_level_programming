@@ -14,7 +14,7 @@ class Student:
         Retrieves a dictionary representation of a Student instance.
 
         Args:
-            attrs (list of str, optional): A list of attribute names to retrieve.
+            attrs (list of str, optional): A list of attributes
                 If None, retrieve all attributes.
 
         Returns:
@@ -34,4 +34,3 @@ class Student:
                         my_dict[at] = value
 
         return my_dict
-
