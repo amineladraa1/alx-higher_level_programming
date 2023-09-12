@@ -34,6 +34,7 @@ class Student:
                         my_dict[at] = value
 
         return my_dict
+
     def reload_from_json(self, json):
         """
         Replaces all attributes of the Student instance from a dict.
