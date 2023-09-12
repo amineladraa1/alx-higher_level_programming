@@ -6,4 +6,4 @@ def read_file(filename=""):
     """reads a file"""
     with open(filename, encoding="UTF-8") as f:
         for f_line in f:
-            print(f_line)
+            print(f_line, end="")
