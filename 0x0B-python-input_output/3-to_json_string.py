@@ -2,6 +2,7 @@
 """define a function that returns the JSON representation of object"""
 import json
 
+
 def to_json_string(my_obj):
     """returns a json
 
