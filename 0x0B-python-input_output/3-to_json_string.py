@@ -4,5 +4,9 @@ import json
 
 
 def to_json_string(my_obj):
-    """returns a json"""
-    return json.dumps(my_obj, sort_keys=True)
+    """returns a json
+
+        :param my_obj: The object to be serialized.
+        :return: A JSON string representing the object.
+    """
+    return json.dumps(my_obj)
