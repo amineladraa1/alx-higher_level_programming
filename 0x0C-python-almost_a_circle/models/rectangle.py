@@ -2,6 +2,7 @@
 """defines a rectangle"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """rectangle instance"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -10,7 +11,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-    
+
     @property
     def width(self):
         return self.__width
@@ -69,8 +70,36 @@ class Rectangle(Base):
         return (self.height * self.width)
 
     def display(self):
-        for _ in range(self.height):
-            print("#" * self.width)
+        rectangle = ""
+        print("\n" * self.y, end="")
+        for i in range(self.height):
+            rectangle += (" " * self.x) + ("#" * self.width) + "\n"
+        print(rectangle, end="")
 
     def __str__(self):
-         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,self.width, self.height)
+         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                        self.y,self.width,
+                                                        self.height)
+
+    def update(self, *args, **kwargs):
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
+
+    def to_dictionary(self):
+        return {
+                'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
+                'width': getattr(self, "width")
+                }
