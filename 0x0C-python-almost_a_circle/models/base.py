@@ -45,7 +45,7 @@ class Base:
     def load_from_file(cls):
         try:
             with open(str(cls.__name__) + ".json", "r") as f:
-                li_dicts = cls.from_json_string(f.read())
-                return [cls.create(**dic) for dic in list_dicts]
+                l_dicts = cls.from_json_string(f.read())
+                return [cls.create(**dic) for dic in l_dicts]
         except IOError:
             return []
