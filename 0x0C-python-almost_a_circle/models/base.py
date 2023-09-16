@@ -41,3 +41,11 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
+    @classmethod
+    def load_from_file(cls):
+        try:
+            with open(str(cls.__name__) + ".json", "r") as f:
+                li_dicts = cls.from_json_string(f.read())
+                return [cls.create(**dic) for dic in list_dicts]
+        except IOError:
+            return []
