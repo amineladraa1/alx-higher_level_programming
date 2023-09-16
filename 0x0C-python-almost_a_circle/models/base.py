@@ -27,3 +27,17 @@ class Base:
                 l_dict = [obj.to_dictionary() for obj in list_objs]
             f.write(cls.to_json_string(l_dict))
 
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+    @classmethod
+    def create(cls, **dictionary):
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
