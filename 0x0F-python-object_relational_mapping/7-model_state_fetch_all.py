@@ -15,7 +15,7 @@ if __name__ == "__main__":
     with engine.connect() as connection:
         query = select(State).order_by(State.id.asc())
         states = connection.execute(query)
-        for state in states:
-            print(f"{state.id}: {state.name}")
+        for st in states:
+            print(f"{st.id}: {st.name}")
 
     engine.dispose()
